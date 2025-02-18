@@ -4,7 +4,7 @@ here are some FAQs
 
 1) What are parallel patterns in computing?
   
-Task Parallelism, Data Parallelism, Pipeline Parallelism, MapReduce, Fork/Join
+Parallel patterns are common methos or techniques used to solve problems by performing
   
 2) What is their significance?- Explain in the context of typical applications they are used in.
 
