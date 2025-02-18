@@ -1,4 +1,4 @@
-Welcome to The goup 6 repository
+Welcome to The group 6 repository
 
 here are some FAQs
 
