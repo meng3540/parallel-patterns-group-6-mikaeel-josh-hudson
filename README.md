@@ -17,4 +17,8 @@ Hetrogenouse GPU-CPU computing is useful because it uses the strengths of the CP
 
 Which parallel pattern is group 6 using: Reduction!
 
+Imagine you and your friends have a big pile of apples, and you want to count them all quickly. Instead of one person counting every apple, you split the apples into smaller piles and give each friend a pile to count. Once everyone finishes counting their own pile, they tell the numbers to one person, who adds them all together to get the final total.
+
+This is how reduction works in computers! Instead of counting apples, computers add numbers, find the biggest one, or do other calculations—really fast! This helps with things like video games, weather predictions, and even robots learning new things. 
+
 Reduction is a parallel computation pattern used to combine a collection of values into a single result using an associative operation such as summation, multiplication, or finding the maximum/minimum. The process involves partitioning the data across multiple processing units, computing partial results in parallel, and then aggregating those partial results to produce the final output. Common operations in reduction include summation, product calculation, and logical operations like AND/OR. For example, in OpenMP, reduction can be implemented using a reduction(+:sum) clause to sum an array efficiently. In CUDA, a tree-based approach is often used to minimize synchronization overhead. Reduction is widely used in parallel computing to accelerate data aggregation tasks, making it essential for applications like big data processing, machine learning, and scientific computing
