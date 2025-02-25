@@ -1,6 +1,6 @@
 Welcome to The group 6 repository
 
-here are some FAQs
+Here are some FAQs
 
 1) What are parallel patterns in computing? 
   
