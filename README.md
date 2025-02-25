@@ -29,4 +29,6 @@ Common operations in reduction include summation, product calculation, and logic
 
 In CUDA, a tree-based approach is often used to minimize synchronization overhead. Reduction is widely used in parallel computing to accelerate data aggregation tasks, making it essential for applications like big data processing, machine learning, and scientific computing
 
-<div>https://github.com/user-attachments/assets/1ad351c5-701b-48ae-bfe1-f6cba4784a84</div>
+<div align="center">
+  <img src="https://i.imgur.com/8BgVXcY.png">
+</div>
