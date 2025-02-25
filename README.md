@@ -23,11 +23,11 @@ This is how reduction works in computers! Instead of counting apples, computers 
 
 Reduction is a parallel computation pattern used to combine a collection of values into a single result using an associative operation such as summation, multiplication, or finding the maximum/minimum. Such as the provided image:
 
-
+\n
 <div align="center">
   <img src="https://github.com/user-attachments/assets/c5c1be50-dbeb-45b1-9fd0-bc159949a08c">
 </div>
-
+\n
 
 The basic reduction algorithm in parallel computing works by breaking a large problem into smaller parts, processing them in parallel, and then combining the results efficiently. First, the input data is divided into smaller chunks, with each processing unit (such as a thread or core) handling a portion of the data. Each unit then computes a partial result independently, applying an operation like summation, multiplication, or finding the maximum value. Once the partial results are obtained, they are combined iteratively in a structured manner, often using a tree-based approach, where pairs of values are reduced step by step until only a single final result remains.
 
