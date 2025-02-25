@@ -28,3 +28,5 @@ The basic reduction algorithm in parallel computing works by breaking a large pr
 Common operations in reduction include summation, product calculation, and logical operations like AND/OR. 
 
 In CUDA, a tree-based approach is often used to minimize synchronization overhead. Reduction is widely used in parallel computing to accelerate data aggregation tasks, making it essential for applications like big data processing, machine learning, and scientific computing
+
+
