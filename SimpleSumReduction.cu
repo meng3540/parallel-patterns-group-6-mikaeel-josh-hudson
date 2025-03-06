@@ -7,17 +7,20 @@
 // Compute sum reduction
 __global__ void SimpleSumReductionKernel(float* input, float* output) {
     unsigned int i = threadIdx.x;
+    // Perform reduction in shared memory
     for (unsigned int stride = 1; stride <= blockDim.x; stride *= 2) {
         if (threadIdx.x % stride == 0) {
             input[i] += input[i + stride];
         }
-        __syncthreads();
+        __syncthreads(); // Ensure all threads have completed the current stride
     }
+    // Write the result of the reduction to the output
     if (threadIdx.x == 0) {
         *output = input[0];
     }
 }
 
+// Function to print a matrix
 void printMatrix(float* matrix, int numRows, int numColumns, const char* name) {
     printf("\nMatrix %s:\n", name);
     for (int i = 0; i < numRows; i++) {
@@ -30,47 +33,46 @@ void printMatrix(float* matrix, int numRows, int numColumns, const char* name) {
 
 int main(int argc, char** argv)
 {
-    float* hostA; // The A matrix
-    float* hostC; // The output C matrix
+    float* hostA; // The A matrix on the host
+    float* hostC; // The output C matrix on the host
     float* deviceA; // Device copy of A matrix
-    float* deviceC; // Device result of matrix multiplication
-    int numARows = 1; // number of rows in the matrix A
-    int numAColumns = 64; // number of columns in the matrix A
-    int numCRows = 1; // number of rows in the matrix C
-    int numCColumns = 1; // number of columns in the matrix C
+    float* deviceC; // Device result of sum reduction
+    int numARows = 1; // Number of rows in the matrix A
+    int numAColumns = 64; // Number of columns in the matrix A
+    int numCRows = 1; // Number of rows in the matrix C
+    int numCColumns = 1; // Number of columns in the matrix C
 
-    // Complete the size in bytes for matrix B and C; matrixA given
+    // Calculate the size in bytes for matrix A and C
     int sizeA = (numARows * numAColumns) * sizeof(float);
     int sizeC = (numCRows * numCColumns) * sizeof(float);
 
-    // Allocate and initialize A & B matrix
+    // Allocate and initialize the A matrix on the host
     hostA = (float*)malloc(sizeA);
-
     for (int i = 0; i < numARows; i++) {
         for (int j = 0; j < numAColumns; j++) {
-            hostA[i * numAColumns + j] = j + 1;
+            hostA[i * numAColumns + j] = j + 1; // Initialize with values 1, 2, 3, ..., 64
         }
     }
 
-    // Allocate the C matrix
-    hostC = (float*)malloc(sizeC); numCRows = numARows;
+    // Allocate the C matrix on the host
+    hostC = (float*)malloc(sizeC);
 
-    // Print matrices A and B
+    // Print the A matrix
     printMatrix(hostA, numARows, numAColumns, "A");
 
     printf("\nThe dimensions of A are %d x %d\n", numARows, numAColumns);
     printf("The dimensions of C are %d x %d\n", numCRows, numCColumns);
 
-    // Allocate GPU memory
+    // Allocate memory on the GPU for matrices A and C
     cudaMalloc((void**)&deviceA, sizeA);
     cudaMalloc((void**)&deviceC, sizeof(float));
 
-    // Copy memory to the GPU
+    // Copy the A matrix from the host to the device
     cudaMemcpy(deviceA, hostA, sizeA, cudaMemcpyHostToDevice);
 
     // Initialize the block dimensions
-    int blockSize = numAColumns; // Adjust block size as needed
-    int gridSize = (numARows * numAColumns + blockSize - 1) / blockSize;
+    int blockSize = numAColumns; // Number of threads per block
+    int gridSize = (numARows * numAColumns + blockSize - 1) / blockSize; // Number of blocks
 
     printf("The block dimensions are %d\n", blockSize);
     printf("The grid dimensions are %d\n", gridSize);
@@ -84,7 +86,7 @@ int main(int argc, char** argv)
     cudaEventRecord(start, 0);
 
     // Launch the GPU Kernel
-    SimpleSumReductionKernel<<<gridSize, blockSize>>>(deviceA, deviceC);
+    SimpleSumReductionKernel << <gridSize, blockSize >> > (deviceA, deviceC);
     cudaDeviceSynchronize();
 
     // Record the stop event
@@ -101,7 +103,7 @@ int main(int argc, char** argv)
     float bandwidth = (totalBytes) / (elapsedTime * 1e3); // Bytes/s
     printf("Effective memory bandwidth: %f bytes/s\n", bandwidth);
 
-    // Copy the GPU memory back to the CPU
+    // Copy the result from the device back to the host
     float result;
     cudaMemcpy(&result, deviceC, sizeof(float), cudaMemcpyDeviceToHost);
 
@@ -119,5 +121,6 @@ int main(int argc, char** argv)
     // Destroy CUDA events
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
+
     return 0;
 }
