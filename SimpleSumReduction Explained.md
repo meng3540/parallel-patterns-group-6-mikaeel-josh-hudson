@@ -1,1 +1,5 @@
-
+KERNEL BREAKDOWN: 
+  - The kernel takes an input array of any length and will output a single value which is the sum of the entire array. 
+  - An index value is calculated which will represent a thread in the code, each thread will work on a pair of elements
+  - The reduction loop: A new variable is created called 'stride', this represents the amount of space in between the 2 elements being added. This is needed to properly assign the correct index in the kernel, the stride is the for loop variable, which doubles every iteration and will increase up to the x dimension of the block. The addition will only be executed if the selected thread is a multiple of the stride x 2 (so the same values are not added), this ensures that the spacing of the addition is proper and will not leave values out ot get used more then once. The addition, being the i-th element plus the i+stride-th element is exeucted and stored in the i-th element.
+  - Result storage: After all interations are complete the input array will have one element which is stored in the output and the kernel is now complete.
