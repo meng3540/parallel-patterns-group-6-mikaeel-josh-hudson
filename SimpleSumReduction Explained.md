@@ -16,10 +16,13 @@ KERNEL BREAKDOWN:
 
 HOST CODE
 The host code sets up the environment and launches the kernel:
-•	Memory Allocation: Allocate memory for the input and output arrays on both the host and the device.
-•	Memory Copy: Copy the input array from the host to the device.
-•	Kernel Launch: Launch the kernel with the calculated grid and block dimensions.
-•	Timing: Use CUDA events to measure the kernel execution time.
-•	Result Copy: Copy the result from the device back to the host.
-•	Cleanup: Free the allocated memory and destroy the CUDA events.
+- Memory Allocation: Allocate memory for the input and output arrays on both the host and the device.
+- Memory Copy: Copy the input array from the host to the device.
+- Kernel Launch: Launch the kernel with the calculated grid and block dimensions.
+- Timing: Use CUDA events to measure the kernel execution time.
+- Result Copy: Copy the result from the device back to the host.
+- Cleanup: Free the allocated memory and destroy the CUDA events.
+
+ERRORS
+
 
