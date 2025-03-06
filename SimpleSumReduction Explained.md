@@ -24,6 +24,6 @@ The host code sets up the environment and launches the kernel:
 - Cleanup: Free the allocated memory and destroy the CUDA events.
 
 ERRORS:
-Things to avoid/consider when implementing this algorithim:
+Problems our group encountered:
 - Changes must be made to reduce a matrix, as the kernel only considers the X dimension of blocks. Solving this problem, the group edited the matrix population host code from Lab 4 to sum-reduce an array as a demonstration of a basic algorithim instead of a matrix.
 
