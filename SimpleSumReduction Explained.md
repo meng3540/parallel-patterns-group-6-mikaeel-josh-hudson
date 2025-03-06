@@ -1,6 +1,6 @@
 The algorithm implemented in the provided CUDA code is a simple sum reduction. Sum reduction is a common parallel algorithm used to sum all elements of an array. The goal is to reduce the array to a single sum value efficiently using parallel processing.
 
-Algorithm Explanation
+ALGORITHIM EXPLAINATION:
 1.	Initialization: Allocate memory for the input array A and the output variable C on both the host (CPU) and the device (GPU). Initialize the input array A with values.
 2.	Memory Transfer: Copy the input array A from the host to the device.
 3.	Kernel Execution: Launch the CUDA kernel to perform the sum reduction on the GPU. The kernel uses a parallel reduction technique to sum the elements of the array.
@@ -14,7 +14,7 @@ KERNEL BREAKDOWN:
   - Synchronization: __syncthreads() ensures all threads complete their operations before moving to the next iteration.
   - Result storage: After all interations are complete the first thread (thread 0) writes the final sum to the output and the kernel is now complete. variable.
 
-HOST CODE
+HOST CODE:
 The host code sets up the environment and launches the kernel:
 - Memory Allocation: Allocate memory for the input and output arrays on both the host and the device.
 - Memory Copy: Copy the input array from the host to the device.
@@ -23,8 +23,7 @@ The host code sets up the environment and launches the kernel:
 - Result Copy: Copy the result from the device back to the host.
 - Cleanup: Free the allocated memory and destroy the CUDA events.
 
-ERRORS
-Things to avoid when implementing this algorithim:
-- Changes must be made to reduce a matrix, as the kernel only considers the X dimension of blocks
-- Ensure that the thread is a multiple of the stride X 2. If this is not done the thread will add to itself which is an incorrect step in Sum Reduction.
+ERRORS:
+Things to avoid/consider when implementing this algorithim:
+- Changes must be made to reduce a matrix, as the kernel only considers the X dimension of blocks. Solving this problem, the group edited the matrix population host code from Lab 4 to sum-reduce an array as a demonstration of a basic algorithim instead of a matrix.
 
