@@ -24,5 +24,7 @@ The host code sets up the environment and launches the kernel:
 - Cleanup: Free the allocated memory and destroy the CUDA events.
 
 ERRORS
-
+Things to avoid when implementing this algorithim:
+- Changes must be made to reduce a matrix, as the kernel only considers the X dimension of blocks
+- Ensure that the thread is a multiple of the stride X 2. If this is not done the thread will add to itself which is an incorrect step in Sum Reduction.
 
