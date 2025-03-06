@@ -3,7 +3,7 @@ The algorithm implemented in the provided CUDA code is a simple sum reduction. S
 ALGORITHIM EXPLAINATION:
 1.	Initialization: Allocate memory for the input array A and the output variable C on both the host (CPU) and the device (GPU). Initialize the input array A with values.
 2.	Memory Transfer: Copy the input array A from the host to the device.
-3.	Kernel Execution: Launch the CUDA kernel to perform the sum reduction on the GPU. The kernel uses a parallel reduction technique to sum the elements of the array.
+3.	Kernel Execution: Launch the CUDA kernel to perform the sum reduction on the GPU. The kernel uses sum reduction technique in parallel to sum the elements of the array.
 4.	Memory Transfer Back: Copy the result from the device back to the host.
 5.	Cleanup: Free the allocated memory on both the host and the device.
 
