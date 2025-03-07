@@ -12,7 +12,7 @@ KERNEL BREAKDOWN:
   - An index value is calculated which will represent a thread in the code, each thread will work on a pair of elements
   - The reduction loop: A new variable is created called 'stride', this represents the amount of space in between the 2 elements being added. This is needed to properly assign the correct index in the kernel, the stride is the for loop variable, which doubles every iteration and will increase up to the x dimension of the block. The addition will only be executed if the selected thread is a multiple of the stride x 2 (so the same values are not added), this ensures that the spacing of the addition is proper and will not leave values out or get used more then once. In each iteration, threads add elements that are 'stride' positions apart.
   - Synchronization: __syncthreads() ensures all threads complete their operations before moving to the next iteration.
-  - Result storage: After all interations are complete the first thread (thread 0) writes the final sum to the output and the kernel is now complete. variable.
+  - Result storage: After all interations are complete, the first thread (thread 0) writes the final sum to the output and the kernel is now a complete variable.
 
 HOST CODE
 The host code sets up the environment and launches the kernel:
