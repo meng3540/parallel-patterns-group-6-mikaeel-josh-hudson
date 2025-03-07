@@ -1,6 +1,6 @@
 The algorithm implemented in the provided CUDA code is a simple sum reduction. Sum reduction is a common parallel algorithm used to sum all elements of an array. The goal is to reduce the array to a single sum value efficiently using parallel processing.
 
-ALGORITHIM EXPLAINATION:
+ALGORITHIM EXPLANATION:
 1.	Initialization: Allocate memory for the input array A and the output variable C on both the host (CPU) and the device (GPU). Initialize the input array A with values.
 2.	Memory Transfer: Copy the input array A from the host to the device.
 3.	Kernel Execution: Launch the CUDA kernel to perform the sum reduction on the GPU. The kernel uses sum reduction technique in parallel to sum the elements of the array.
