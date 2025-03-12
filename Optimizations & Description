@@ -39,9 +39,13 @@ accesses are slow, while shared memory and registers are much faster which can a
 reduce latency and has a higher bandwidth than with global memory. Execution speed would be improved in the long run.
 
 Hierarchical reduction for arbitrary input length:
-This optimization technique is a flexible reduction approach that divides work across multiple levels of reduction. It Ensures that large input sizes do not 
-cause load imbalance and are processed efficiently. Scales well for large datasets and prevents performance degradation.
+This optimization technique is a flexible reduction approach that divides work across multiple levels of reduction. It ensures that large input sizes do not 
+cause load imbalance and are processed efficiently. The idea being shown here is to partition the input array into properly sized segments for a block so 
+that the block can execute a reduction tree and gather their results for a final output. This scales well for large datasets and prevents performance from 
+decreasing.
 
 Thread coarsening for reduced overhead:
-Each thread processes multiple elements instead of just one, reducing the number of kernel launches and synchronization points.  Reduces thread scheduling 
-overhead and improves computation-to-memory access ratio. Improves GPU utilization and reduces kernel launch overhead.
+In this optimization technique, each thread processes multiple elements instead of just one, which in turn reduces the number of kernel launches and 
+synchronization points. If each thread is assigned to one element, it can slow down the execution time. Hence, with this optimization technique, there 
+are fewer threads to manage  which in turn reduces the number of global memory access which improves or optimizes the algorithm. It will overall
+improve GPU utilization and reduces kernel launch overhead.
