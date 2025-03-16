@@ -3,10 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 #define N 256
 #define BLOCK_SIZE 16
 #define COARSENING_FACTOR 2
+
 // the Optimizations added where Thread Coarsening and Tiling 
+
 // Compute sum reduction using tiling and thread coarsening
 __global__ void TiledSumReductionKernel(float* input, float* output, int numElements) {
     extern __shared__ float sharedData[];
