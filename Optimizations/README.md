@@ -1,4 +1,4 @@
-The optimzations for Reduction parallel pattern includes:
+The optimzations available for Reduction parallel pattern includes:
 - Reduction trees
 - A simple reduction kernel
 - Minimizing control divergence
