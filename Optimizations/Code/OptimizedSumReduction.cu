@@ -94,9 +94,10 @@ int main(int argc, char** argv)
     // Initialize the block dimensions
     int blockSize = BLOCK_SIZE; // Number of threads per block
     int gridSize = (numAColumns + blockSize * COARSENING_FACTOR - 1) / (blockSize * COARSENING_FACTOR); // Number of blocks
-
+    
     printf("The block dimensions are %d\n", blockSize);
     printf("The grid dimensions are %d\n", gridSize);
+    printf("The Coarsening Factor is %d\n", COARSENING_FACTOR);
 
     // Create CUDA events for timing
     cudaEvent_t start, stop;
