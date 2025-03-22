@@ -49,3 +49,8 @@ In this optimization technique, each thread processes multiple elements instead 
 synchronization points. If each thread is assigned to one element, it can slow down the execution time. Hence, with this optimization technique, there 
 are fewer threads to manage  which in turn reduces the number of global memory access which improves or optimizes the algorithm. It will overall
 improve GPU utilization and reduces kernel launch overhead.
+
+
+
+Detailed analysis of the performance improvement relating to the results (readme)**
+include the summary table from Appendix B
