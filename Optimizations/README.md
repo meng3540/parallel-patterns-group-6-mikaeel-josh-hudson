@@ -37,7 +37,7 @@ If threads access scattered memory locations that are adjacent to each other, me
 adjacent locations which in turn increases latency.However, this optimization allows for the threads are coalesced for efficient memory access. This 
 in turn would reduces memory access time and as such improve overall performance.
 
-Minimizing global memory accesses (Has been implemented):
+Minimizing global memory accesses:
 
 In this optimization technique, shared memory would be used or registers instead of repeatedly accessing global memory which is much slower. Global memory 
 accesses are slow, while shared memory and registers are much faster which can also be used to compliment other optimizations which in turn would 
@@ -50,21 +50,16 @@ cause load imbalance and are processed efficiently. The idea being shown here is
 that the block can execute a reduction tree and gather their results for a final output. This scales well for large datasets and prevents performance from 
 decreasing.
 
-Thread coarsening for reduced overhead (Has been implemented):
+Thread coarsening for reduced overhead:
 
 In this optimization technique, each thread processes multiple elements instead of just one, which in turn reduces the number of kernel launches and 
 synchronization points. If each thread is assigned to one element, it can slow down the execution time. Hence, with this optimization technique, there 
 are fewer threads to manage  which in turn reduces the number of global memory access which improves or optimizes the algorithm. It will overall
 improve GPU utilization and reduces kernel launch overhead.
 
+Optimization Rationale:
 
-
-
-
-
-
-
-Rationale of your choice of optimizations clearly relate to the profiling results (readme)
+After reviewing the list of optimizations availble and the profiling results from the basic algorithm. Thre selcted optimization were Tiling to minimize global memeory access and thread coarsenign to reduce overhead. The reason we chose these two in aprticualr is because of the synergey between these two optimizations. As in our previous labs when implementing just Tiling into our code, the results equal a decrease in execution time but an increase in effective memmory bandwidth where as the expected resutls of implementing thread coarsening equal a decrease in effect memmory and an increase in execution time. These results led our group to the conclusion that implementing both these optimization together may result in an overall reduction in both execution time and effective memmory bandwidth.
 
 Detailed analysis of the performance improvement relating to the results (readme)**
 include the summary table from Appendix B
