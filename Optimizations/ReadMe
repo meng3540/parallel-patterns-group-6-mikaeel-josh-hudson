@@ -61,6 +61,7 @@ Rationale of your choice of optimizations clearly relate to the profiling result
 
 Detailed analysis of the performance improvement relating to the results (readme)**
 include the summary table from Appendix B
+
 | Command | Description |
 | --- | --- |
 | git status | List all new or modified files |
