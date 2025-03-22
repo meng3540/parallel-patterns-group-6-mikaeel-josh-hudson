@@ -52,5 +52,12 @@ improve GPU utilization and reduces kernel launch overhead.
 
 
 
+
+
+
+
+
+Rationale of your choice of optimizations clearly relate to the profiling results (readme)
+
 Detailed analysis of the performance improvement relating to the results (readme)**
 include the summary table from Appendix B
