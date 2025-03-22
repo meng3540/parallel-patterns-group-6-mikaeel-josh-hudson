@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define N 256
+#define N 1000
 #define BLOCK_SIZE 16
 #define COARSENING_FACTOR 2
 
