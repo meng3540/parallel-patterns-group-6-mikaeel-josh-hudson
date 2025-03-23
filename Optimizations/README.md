@@ -73,7 +73,7 @@ include the summary table from Appendix B
 
 
 Simple Algorithm Output
-![image](https://github.com/meng3540/parallel-patterns-group-6-mikaeel-josh-hudson/blob/main/Optimizations/Tests/Profiling%20Results%20For%20Basic%20Algorithm/Simple%20Algorithm%20results.png)
+![image](https://github.com/meng3540/parallel-patterns-group-6-mikaeel-josh-hudson/blob/main/Optimizations/Tests/Profiling%20Results%20For%20Basic%20Algorithm/Simple%20Algorithm%20results.png)\n
 
 One optimization(coursening) output
 ![image](https://github.com/meng3540/parallel-patterns-group-6-mikaeel-josh-hudson/blob/main/Optimizations/Tests/Profiling%20Results%20For%20Thread%20Coarsening/Coursening%20Only%20results.png)
