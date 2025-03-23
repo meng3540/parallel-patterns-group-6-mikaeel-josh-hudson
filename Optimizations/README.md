@@ -68,7 +68,7 @@ include the summary table from Appendix B
 | ------------- | ----------------- | ------------------- | ------------------------ | ------------ | ------------------- |
 | 1             | Basic algorithm with no optimization               |1.05 ms                | 3.81 bytes/s                      | ---          | ---                 |
 | 2             | Coursening only algorithm               | 1.04 ms                 | 3.83 bytes/s                      | ---          | ---                 |
-| 3             | Fully optimized algorithm               | 0.79                | 5.04 bytes/s                      | ---          | ---                 |
+| 3             | Fully optimized algorithm               | 0.79 ms                | 5.04 bytes/s                      | ---          | ---                 |
 
 
 
