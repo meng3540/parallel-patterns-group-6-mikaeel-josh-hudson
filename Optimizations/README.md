@@ -66,7 +66,7 @@ include the summary table from Appendix B
 
 | Optimization# | Short Description | Execution time (ms) | Memory Bandwidth (GB/s) | Step Speedup | Cumulative Speedup |
 | ------------- | ----------------- | ------------------- | ------------------------ | ------------ | ------------------- |
-| 1             | ---               | ---                 | ---                      | ---          | ---                 |
+| 1             | Basic algorithm with no optimization               | ---                 | ---                      | ---          | ---                 |
 | 2             | ---               | ---                 | ---                      | ---          | ---                 |
 | 3             | ---               | ---                 | ---                      | ---          | ---                 |
 
