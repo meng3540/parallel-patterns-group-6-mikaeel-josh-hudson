@@ -64,10 +64,12 @@ After reviewing the list of optimizations availble and the profiling results fro
 Detailed analysis of the performance improvement relating to the results (readme)**
 include the summary table from Appendix B
 
-| Optimizataion#| Short Description |Execution time (ms)| Memory Bandwidth (GB/s)| Step speedup| Cumulative speedup|
-| 1             | ---                                   | ---                    |---          |---                | 
-| 2             | ---                                   | ---                    |---          |---                | 
-| 3             | ---                                   | ---                    |---          |---                | 
+| Optimization# | Short Description | Execution time (ms) | Memory Bandwidth (GB/s) | Step Speedup | Cumulative Speedup |
+| ------------- | ----------------- | ------------------- | ------------------------ | ------------ | ------------------- |
+| 1             | ---               | ---                 | ---                      | ---          | ---                 |
+| 2             | ---               | ---                 | ---                      | ---          | ---                 |
+| 3             | ---               | ---                 | ---                      | ---          | ---                 |
+
 
 
 
