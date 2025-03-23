@@ -71,4 +71,4 @@ include the summary table from Appendix B
 
 
 
-![image](Tests/Profiling Results For Basic Algorithm/Simple Aglorithm results.png)
+![image](Tests/Profiling Results For Basic Algorithm/Simple Algorithm results.png)
