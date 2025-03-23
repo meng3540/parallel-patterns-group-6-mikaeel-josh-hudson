@@ -64,10 +64,10 @@ After reviewing the list of optimizations availble and the profiling results fro
 Detailed analysis of the performance improvement relating to the results (readme)**
 include the summary table from Appendix B
 
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| Optimizataion#| Short Description |Execution time (ms)| Memory Bandwidth (GB/s)| Step speedup| Cumulative speedup|
+| 1             | ---                                   | ---                    |---          |---                | 
+| 2             | ---                                   | ---                    |---          |---                | 
+| 3             | ---                                   | ---                    |---          |---                | 
 
 
 
