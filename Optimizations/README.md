@@ -67,8 +67,8 @@ include the summary table from Appendix B
 | Optimization# | Short Description | Execution time (ms) | Memory Bandwidth (GB/s) | Step Speedup | Cumulative Speedup |
 | ------------- | ----------------- | ------------------- | ------------------------ | ------------ | ------------------- |
 | 1             | Basic algorithm with no optimization               | ---                 | ---                      | ---          | ---                 |
-| 2             | ---               | ---                 | ---                      | ---          | ---                 |
-| 3             | ---               | ---                 | ---                      | ---          | ---                 |
+| 2             | Coursening only algorithm               | ---                 | ---                      | ---          | ---                 |
+| 3             | Fully optimized algorithm               | ---                 | ---                      | ---          | ---                 |
 
 
 
