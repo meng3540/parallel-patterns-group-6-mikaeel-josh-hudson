@@ -94,3 +94,10 @@ When it comes to the GPU utilization
 | 1             |  0.76             | 1.67                | 100                  |
 | 2             | 2.17              | 1.41                | 50                   | 
 | 3             |  2.18             |1.69                 | 50                   |
+
+
+Explanation for GPU utilization
+
+For the simple algorithm, the occupancy is 100%, which indicates that all available thread-blocks are being used. However, the SM Throughput and Memory Throughput are relatively low, suggesting that the algorithm isn't fully utilizing all the GPU's computational or memory bandwidth capabilities. It means that while the threads are being put to use, each thread isn’t doing much work, and the memory isn't being used just as efficiently.
+For the coursening only optimization, the SM Throughput increases, meaning the GPU is doing more computation per unit of time. However, the Occupancy drops to 50%, indicating that only half of the thread-blocks are being utilized. The Memory Throughput is lower than in basic algorithm, which is suggesting that memory is being accessed less, possibly due to the algorithm requiring less data transfer or improved memory access patterns.
+For the algorithm with two optimizations, the SM Throughput and Memory Throughput are slightly higher than in the optimization with only coursening, which is indicating further improvements in computational and memory resource usage. However, the Occupancy is still at 50%, which shows that the algorithm isn't utilizing all available threads.
