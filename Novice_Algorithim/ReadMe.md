@@ -25,5 +25,5 @@ The host code sets up the environment and launches the kernel:
 
 ERRORS
 Problems our group encountered:
-- Changes must be made to reduce a matrix, as the kernel only considers the X dimension of blocks. Solving this problem, the group edited the matrix population host code from Lab 4 to sum-reduce an array as a demonstration of a basic algorithim instead of a matrix.
+- Changes must be made to reduce a vector, as the kernel only considers the X dimension of blocks. Solving this problem, the group edited the matrix population host code from Lab 4 to sum-reduce an array as a demonstration of a basic algorithim instead of a matrix.
 
