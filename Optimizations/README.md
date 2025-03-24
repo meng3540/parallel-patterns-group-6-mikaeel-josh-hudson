@@ -91,6 +91,6 @@ With the simple algorithm taht has no optimization applied, the algorithm runs a
 When it comes to the GPU utilization
 | Optimization# | SM %              | Memory %            | Occupancy %          | 
 | ------------- | ----------------- | ------------------- | -------------------- |
-| 1             |  0.76             | 1.67                | 50                   |
-| 2             |  1.04 ms          | 3.83 bytes/s        |                      | 
-| 3             |  0.79 ms          | 5.04 bytes/s        |                      |
+| 1             |  0.76             | 1.67                | 100                   |
+| 2             | 2.17        | 1.41        | 50                   | 
+| 3             |  2.18          |1.69       | 50                   |
