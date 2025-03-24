@@ -61,6 +61,7 @@ Optimization Rationale:
 
 After reviewing the list of optimizations availble and the profiling results from the basic algorithm. Thre selcted optimization were Tiling to minimize global memeory access and thread coarsenign to reduce overhead. The reason we chose these two in particular is because of the synergey between these two optimizations. As in our previous labs when implementing just Tiling into our code, the results equal a decrease in execution time but an increase in effective memmory bandwidth where as the expected resutls of implementing thread coarsening equal a decrease in effect memmory and an increase in execution time. These results led our group to the conclusion that implementing both these optimization together may result in an overall reduction in both execution time and effective memmory bandwidth.
 
+Detailed Analysis:
 
 | Optimization# | Short Description | Execution time (ms) | Memory Bandwidth (GB/s) | Step Speedup | Cumulative Speedup |
 | ------------- | ----------------- | ------------------- | ------------------------ | ------------ | ------------------- |
