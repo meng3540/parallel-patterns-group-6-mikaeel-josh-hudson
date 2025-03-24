@@ -87,3 +87,10 @@ Full optimization(two optimization) output
 
 Detailed analysis of the performance improvement relating to the results:
 With the simple algorithm taht has no optimization applied, the algorithm runs at 1.05 milliseconds and has a memory bandwidth of 3.81 bytes/s. Since there are no optimizations yet, the step speedup and cumulative speedup are both zero, meaning we have no performance improvement in this case. For the algorithm with one optimization, we’ve applied a "coursening" optimization, which reduces the execution time slightly from 1.05 ms to 1.04 ms (about a 1% improvement). The memory bandwidth also sees a small increase. The big change here, though, is the step speedup of 19.52,which means that the algorithm is now much more efficient in terms of the number of operations it can perform per unit of time. Even though the execution time doesn’t change drastically, this optimization still boosts performance significantly. Now with full optimization, we see a much more noticeable reduction in execution time from 1.04 ms down to 0.79 ms as there is less of a need to access global memory hence less time taken for that. That’s a 24% improvement, which is pretty significant. Memory bandwidth also jumps quite a bit, from 3.83 bytes/s to 5.04 bytes/s, meaning the algorithm is now handling data more effectively. The step speedup drops slightly however to 18.81 compared to the previous optimization’s 19.52, but overall a significant improvement more than the basic algorithm and one optimization implementation.
+
+When it comes to the GPU utilization
+| Optimization# | SM | Memory  | Occupancy| 
+| ------------- | ----------------- | ------------------- | -------------------- |
+| 1             |  1.05 ms          | 3.81 bytes/s        |                      |
+| 2             |  1.04 ms          | 3.83 bytes/s        |                      | 
+| 3             |  0.79 ms          | 5.04 bytes/s        |                      |
