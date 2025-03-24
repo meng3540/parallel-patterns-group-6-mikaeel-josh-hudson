@@ -9,7 +9,7 @@ __global__ void SimpleSumReductionKernel(float* input, float* output) {
     unsigned int i = threadIdx.x;
     // Perform reduction in shared memory
     for (unsigned int stride = 1; stride <= blockDim.x; stride *= 2) {
-        if (threadIdx.x % stride == 0) {
+        if (threadIdx.x % 2*stride == 0) {
             input[i] += input[i + stride];
         }
         __syncthreads(); // Ensure all threads have completed the current stride
